@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -153,10 +152,12 @@ const Blog = () => {
                       </div>
                       <span className="text-gray-700 font-medium">{featuredPost.author}</span>
                     </div>
-                    <Button className="bg-primary hover:bg-brand-secondary">
-                      Read Article
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link to="/blog/ai-business-trends-2024">
+                      <Button className="bg-primary hover:bg-brand-secondary">
+                        Read Article
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </div>
@@ -199,9 +200,11 @@ const Blog = () => {
                           </div>
                           <span className="text-gray-600 text-sm">{post.author}</span>
                         </div>
-                        <Button variant="ghost" size="sm" className="p-0 h-auto text-primary hover:text-brand-secondary">
-                          Read More <ArrowRight className="ml-1 h-3 w-3" />
-                        </Button>
+                        <Link to={index === 0 ? "/blog/digital-transformation-trends-2024" : "#"}>
+                          <Button variant="ghost" size="sm" className="p-0 h-auto text-primary hover:text-brand-secondary">
+                            Read More <ArrowRight className="ml-1 h-3 w-3" />
+                          </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>

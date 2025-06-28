@@ -332,10 +332,12 @@ const Careers = () => {
                       </ul>
                     </div>
                     <div className="pt-4 border-t">
-                      <Button className="w-full bg-primary hover:bg-brand-secondary">
-                        Apply Now
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+                      <Link to={`/careers/apply/${encodeURIComponent(position.title)}`}>
+                        <Button className="w-full bg-primary hover:bg-brand-secondary">
+                          Apply Now
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>

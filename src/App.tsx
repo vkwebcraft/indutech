@@ -9,8 +9,11 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
+import BlogPost1 from "./pages/blog/BlogPost1";
+import BlogPost2 from "./pages/blog/BlogPost2";
 import Clients from "./pages/Clients";
 import Careers from "./pages/Careers";
+import CareerApplication from "./pages/CareerApplication";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -28,8 +31,11 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/ai-business-trends-2024" element={<BlogPost1 />} />
+          <Route path="/blog/digital-transformation-trends-2024" element={<BlogPost2 />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/apply/:jobTitle?" element={<CareerApplication />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
