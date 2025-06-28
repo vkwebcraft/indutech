@@ -30,11 +30,12 @@ const Header = () => {
       <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">I</span>
-              </div>
-              <span className="text-xl font-bold text-gray-800">Indutech IT Solution</span>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/35e03803-1007-4e96-a728-f20cfb7c7287.png" 
+                alt="Indutech IT Solution" 
+                className="h-10 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
