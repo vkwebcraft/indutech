@@ -2,163 +2,205 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Globe, Code, TrendingUp } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Globe, Code, TrendingUp, ExternalLink, Award, Users, Star } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Portfolio = () => {
-  const projects = [
+  const featuredProjects = [
     {
       title: 'TechStart E-commerce Platform',
-      industry: 'E-commerce',
-      description: 'Complete e-commerce solution with inventory management, payment processing, and customer analytics.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-      results: '300% increase in online sales, 150% improvement in conversion rate',
-      testimonial: 'Indutech delivered an exceptional e-commerce platform that transformed our business.',
-      client: 'TechStart Inc.'
+      category: 'E-commerce',
+      description: 'Revolutionary e-commerce solution with AI-powered recommendations and seamless checkout experience.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AI/ML'],
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+      results: ['300% increase in sales', '150% better conversion', '50% faster load times'],
+      testimonial: 'Indutech delivered an exceptional platform that transformed our business completely.',
+      client: 'TechStart Inc.',
+      gradient: 'from-blue-600 to-purple-600',
+      delay: '0ms'
     },
     {
       title: 'Healthcare Management System',
-      industry: 'Healthcare',
-      description: 'Comprehensive patient management system with appointment scheduling and medical records.',
-      technologies: ['Vue.js', 'Python', 'PostgreSQL', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
-      results: '60% reduction in administrative time, improved patient satisfaction',
-      testimonial: 'The system streamlined our operations and improved patient care significantly.',
-      client: 'MediCare Plus'
+      category: 'Healthcare',
+      description: 'Comprehensive patient management system with telemedicine capabilities and real-time analytics.',
+      technologies: ['Vue.js', 'Python', 'PostgreSQL', 'WebRTC', 'Docker'],
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop',
+      results: ['60% reduced admin time', '95% patient satisfaction', '40% cost savings'],
+      testimonial: 'The system streamlined our operations and significantly improved patient care.',
+      client: 'MediCare Plus',
+      gradient: 'from-emerald-600 to-teal-600',
+      delay: '100ms'
     },
     {
       title: 'Financial Analytics Dashboard',
-      industry: 'Finance',
-      description: 'Real-time financial analytics platform with advanced reporting and data visualization.',
-      technologies: ['Angular', 'C#', 'SQL Server', 'Power BI'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      results: '40% faster reporting, 200% improvement in data accuracy',
+      category: 'Finance',
+      description: 'Real-time financial analytics platform with advanced reporting and predictive insights.',
+      technologies: ['Angular', 'C#', 'SQL Server', 'Power BI', 'Azure'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      results: ['40% faster reporting', '200% data accuracy', '80% time savings'],
       testimonial: 'This dashboard revolutionized how we analyze and present financial data.',
-      client: 'FinanceFlow Corp'
-    },
-    {
-      title: 'Educational Learning Platform',
-      industry: 'Education',
-      description: 'Interactive online learning platform with video streaming and progress tracking.',
-      technologies: ['React', 'Django', 'AWS', 'WebRTC'],
-      image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop',
-      results: '500+ active students, 95% completion rate',
-      testimonial: 'The platform exceeded our expectations and delivered outstanding learning outcomes.',
-      client: 'EduTech Academy'
-    },
-    {
-      title: 'Restaurant Chain Management',
-      industry: 'Food & Beverage',
-      description: 'Multi-location restaurant management system with POS integration and inventory tracking.',
-      technologies: ['PHP', 'Laravel', 'MySQL', 'Vue.js'],
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop',
-      results: '25% cost reduction, 180% efficiency improvement',
-      testimonial: 'Our restaurant operations have never been more efficient and profitable.',
-      client: 'Gourmet Restaurants'
-    },
-    {
-      title: 'Real Estate CRM Platform',
-      industry: 'Real Estate',
-      description: 'Customer relationship management system with property listings and lead tracking.',
-      technologies: ['Next.js', 'Express.js', 'MongoDB', 'Mapbox'],
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
-      results: '45% increase in lead conversion, 300% growth in listings',
-      testimonial: 'This CRM system transformed our real estate business operations.',
-      client: 'Prime Properties'
+      client: 'FinanceFlow Corp',
+      gradient: 'from-orange-600 to-red-600',
+      delay: '200ms'
     }
   ];
 
   const industries = [
-    { name: 'E-commerce', count: 50, icon: Globe },
-    { name: 'Healthcare', count: 35, icon: Code },
-    { name: 'Finance', count: 40, icon: TrendingUp },
-    { name: 'Education', count: 25, icon: Code },
-    { name: 'Manufacturing', count: 30, icon: Code },
-    { name: 'Real Estate', count: 20, icon: Globe }
+    { name: 'E-commerce', count: 85, icon: Globe, color: 'bg-blue-500', projects: '85+ Projects' },
+    { name: 'Healthcare', count: 62, icon: Code, color: 'bg-emerald-500', projects: '62+ Projects' },
+    { name: 'Finance', count: 78, icon: TrendingUp, color: 'bg-orange-500', projects: '78+ Projects' },
+    { name: 'Education', count: 45, icon: Code, color: 'bg-purple-500', projects: '45+ Projects' },
+    { name: 'Manufacturing', count: 38, icon: Code, color: 'bg-red-500', projects: '38+ Projects' },
+    { name: 'Real Estate', count: 29, icon: Globe, color: 'bg-indigo-500', projects: '29+ Projects' }
+  ];
+
+  const achievements = [
+    { icon: Award, number: '500+', label: 'Successful Projects', color: 'text-blue-600' },
+    { icon: Users, number: '200+', label: 'Happy Clients', color: 'text-emerald-600' },
+    { icon: Star, number: '98%', label: 'Client Satisfaction', color: 'text-orange-600' },
+    { icon: Globe, number: '15+', label: 'Countries Served', color: 'text-purple-600' }
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary via-brand-secondary to-primary text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Our Portfolio
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
-              Showcasing successful projects across various industries. Each solution is crafted to drive business growth and innovation.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-12">
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">500+</div>
-                <div className="text-blue-100">Projects Completed</div>
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-medium mb-8">
+                <Award className="w-4 h-4 mr-2" />
+                Award-Winning Projects
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">15+</div>
-                <div className="text-blue-100">Industries Served</div>
+              
+              <h1 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+                Our Success
+                <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Stories
+                </span>
+              </h1>
+              
+              <p className="text-xl text-purple-100 mb-12 leading-relaxed">
+                Showcasing transformative digital solutions that have driven exceptional business results across diverse industries worldwide.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-full px-10 py-4 text-lg font-semibold shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
+                  Explore Projects
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-full px-10 py-4 text-lg font-semibold">
+                  Start Your Project
+                </Button>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">98%</div>
-                <div className="text-blue-100">Client Satisfaction</div>
-              </div>
+            </div>
+            
+            {/* Achievement Stats */}
+            <div className="grid grid-cols-2 gap-6">
+              {achievements.map((achievement, index) => (
+                <Card key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-300">
+                  <CardContent className="p-8 text-center">
+                    <div className={`w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-4`}>
+                      <achievement.icon className={`h-8 w-8 ${achievement.color.replace('text-', 'text-white')}`} />
+                    </div>
+                    <div className="text-3xl font-black text-white mb-2">{achievement.number}</div>
+                    <div className="text-purple-200 text-sm font-medium">{achievement.label}</div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold mb-6">
+              <Star className="w-4 h-4 mr-2" />
               Featured Success Stories
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+              Transformative
+              <span className="block text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
+                Digital Solutions
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how we've helped businesses transform their operations and achieve remarkable results
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Discover how we've helped businesses achieve remarkable results through innovative technology solutions
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover"
-                />
-                <CardContent className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
-                      {project.industry}
-                    </span>
+          <div className="space-y-16">
+            {featuredProjects.map((project, index) => (
+              <Card 
+                key={index} 
+                className={`overflow-hidden border-0 shadow-2xl rounded-3xl group hover:shadow-3xl transition-all duration-500 ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}
+                style={{ animationDelay: project.delay }}
+              >
+                <div className={`grid grid-cols-1 lg:grid-cols-2 ${index % 2 === 1 ? 'lg:grid-cols-2' : ''}`}>
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-80 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
                   
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Technologies Used:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
-                          {tech}
-                        </span>
-                      ))}
+                  <CardContent className="p-12 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-6">
+                      <span className={`px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${project.gradient}`}>
+                        {project.category}
+                      </span>
+                      <ExternalLink className="h-6 w-6 text-gray-400 group-hover:text-primary transition-colors cursor-pointer" />
                     </div>
-                  </div>
-                  
-                  <div className="border-t pt-4 mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Results Achieved:</h4>
-                    <p className="text-green-600 font-medium">{project.results}</p>
-                  </div>
-                  
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="text-gray-700 italic mb-2">"{project.testimonial}"</p>
-                    <p className="text-sm text-gray-600">- {project.client}</p>
-                  </div>
-                </CardContent>
+                    
+                    <h3 className="text-3xl font-black text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+                      {project.description}
+                    </p>
+                    
+                    <div className="mb-6">
+                      <h4 className="font-bold text-gray-900 mb-3">Technologies Used:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span key={techIndex} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full font-medium">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="mb-6">
+                      <h4 className="font-bold text-gray-900 mb-3">Key Results:</h4>
+                      <div className="space-y-2">
+                        {project.results.map((result, resultIndex) => (
+                          <div key={resultIndex} className="flex items-center">
+                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                            <span className="text-emerald-600 font-semibold">{result}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className={`bg-gradient-to-r ${project.gradient} bg-opacity-5 p-6 rounded-2xl`}>
+                      <p className="text-gray-700 italic mb-3 leading-relaxed">
+                        "{project.testimonial}"
+                      </p>
+                      <p className="font-bold text-gray-900">— {project.client}</p>
+                    </div>
+                  </CardContent>
+                </div>
               </Card>
             ))}
           </div>
@@ -166,27 +208,38 @@ const Portfolio = () => {
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
+              <Globe className="w-4 h-4 mr-2" />
               Industries We Serve
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+              Expertise Across
+              <span className="block text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text">
+                Multiple Industries
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our expertise spans across multiple industries, delivering tailored solutions for diverse business needs
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Our diverse portfolio spans across various industries, delivering tailored solutions for unique business challenges
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 group">
-                <CardContent className="pt-8">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors duration-300">
-                    <industry.icon className="h-8 w-8 text-primary group-hover:text-white" />
+              <Card key={index} className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden">
+                <CardContent className="p-8 text-center">
+                  <div className={`w-20 h-20 ${industry.color} rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <industry.icon className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{industry.name}</h3>
-                  <p className="text-3xl font-bold text-primary mb-2">{industry.count}+</p>
-                  <p className="text-gray-600">Projects Delivered</p>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                    {industry.name}
+                  </h3>
+                  
+                  <div className="text-4xl font-black text-primary mb-2">{industry.count}+</div>
+                  <p className="text-gray-600 font-medium">{industry.projects}</p>
                 </CardContent>
               </Card>
             ))}
@@ -194,80 +247,29 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Process Showcase */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Success Formula
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              What makes our projects successful? A proven methodology combined with deep technical expertise
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="space-y-8">
-                {[
-                  {
-                    title: 'Requirements Analysis',
-                    description: 'We dive deep into your business needs and technical requirements to ensure perfect alignment.'
-                  },
-                  {
-                    title: 'Agile Development',
-                    description: 'Our iterative approach ensures regular feedback and flexibility throughout the development process.'
-                  },
-                  {
-                    title: 'Quality Assurance',
-                    description: 'Rigorous testing at every stage ensures robust, reliable, and secure solutions.'
-                  },
-                  {
-                    title: 'Ongoing Support',
-                    description: 'We provide continuous support and maintenance to ensure your solution evolves with your business.'
-                  }
-                ].map((step, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-sm">{index + 1}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
-                      <p className="text-gray-600">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=500&fit=crop"
-                alt="Our development process"
-                className="rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Start Your Success Story?
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-8">
+            Ready to Create Your
+            <span className="block text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+              Success Story?
+            </span>
           </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            Join our growing list of satisfied clients. Let's discuss how we can help transform your business with innovative technology solutions.
+          <p className="text-xl mb-12 text-purple-100 max-w-3xl mx-auto leading-relaxed">
+            Join our growing list of satisfied clients. Let's discuss how we can transform your business with innovative technology solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg">
+              <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-full px-10 py-4 text-lg font-semibold shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link to="/services">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg">
+              <Button variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-full px-10 py-4 text-lg font-semibold">
                 View Our Services
               </Button>
             </Link>
