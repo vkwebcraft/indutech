@@ -65,49 +65,48 @@ const Portfolio = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-50">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.03"%3E%3Cpath d="M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-medium mb-8">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 text-purple-800 text-sm font-semibold mb-8">
                 <Award className="w-4 h-4 mr-2" />
                 Award-Winning Projects
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
                 Our Success
-                <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
                   Stories
                 </span>
               </h1>
               
-              <p className="text-xl text-purple-100 mb-12 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
                 Showcasing transformative digital solutions that have driven exceptional business results across diverse industries worldwide.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-full px-10 py-4 text-lg font-semibold shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300">
                   Explore Projects
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-full px-10 py-4 text-lg font-semibold">
+                <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 rounded-full px-10 py-4 text-lg font-semibold">
                   Start Your Project
                 </Button>
               </div>
             </div>
             
-            {/* Achievement Stats */}
             <div className="grid grid-cols-2 gap-6">
               {achievements.map((achievement, index) => (
-                <Card key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-300">
+                <Card key={index} className="bg-white border border-gray-200 rounded-3xl hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-8 text-center">
-                    <div className={`w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-4`}>
-                      <achievement.icon className={`h-8 w-8 ${achievement.color.replace('text-', 'text-white')}`} />
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center mx-auto mb-4`}>
+                      <achievement.icon className={`h-8 w-8 ${achievement.color}`} />
                     </div>
-                    <div className="text-3xl font-black text-white mb-2">{achievement.number}</div>
-                    <div className="text-purple-200 text-sm font-medium">{achievement.label}</div>
+                    <div className="text-3xl font-black text-gray-900 mb-2">{achievement.number}</div>
+                    <div className="text-gray-600 text-sm font-medium">{achievement.label}</div>
                   </CardContent>
                 </Card>
               ))}
@@ -117,16 +116,16 @@ const Portfolio = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold mb-6">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 text-blue-800 text-sm font-semibold mb-6">
               <Star className="w-4 h-4 mr-2" />
               Featured Success Stories
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
               Transformative
-              <span className="block text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
+              <span className="block text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
                 Digital Solutions
               </span>
             </h2>
@@ -139,7 +138,7 @@ const Portfolio = () => {
             {featuredProjects.map((project, index) => (
               <Card 
                 key={index} 
-                className={`overflow-hidden border-0 shadow-2xl rounded-3xl group hover:shadow-3xl transition-all duration-500 ${
+                className={`overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 rounded-3xl group ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
                 style={{ animationDelay: project.delay }}
@@ -208,16 +207,16 @@ const Portfolio = () => {
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-200 text-emerald-800 text-sm font-semibold mb-6">
               <Globe className="w-4 h-4 mr-2" />
               Industries We Serve
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
               Expertise Across
-              <span className="block text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text">
+              <span className="block text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text">
                 Multiple Industries
               </span>
             </h2>
@@ -248,28 +247,26 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-8">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">
             Ready to Create Your
-            <span className="block text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+            <span className="block text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
               Success Story?
             </span>
           </h2>
-          <p className="text-xl mb-12 text-purple-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl mb-12 text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join our growing list of satisfied clients. Let's discuss how we can transform your business with innovative technology solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-full px-10 py-4 text-lg font-semibold shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300">
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link to="/services">
-              <Button variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-full px-10 py-4 text-lg font-semibold">
+              <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 rounded-full px-10 py-4 text-lg font-semibold">
                 View Our Services
               </Button>
             </Link>

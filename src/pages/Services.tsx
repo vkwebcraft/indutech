@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Code, Globe, Database, TrendingUp, Users, CheckCircle, Sparkles, Zap, Target } from 'lucide-react';
+import { ArrowRight, Code, Globe, Database, TrendingUp, Users, CheckCircle, Sparkles, Zap, Target, Star } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Services = () => {
@@ -112,39 +112,38 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-medium mb-8">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 text-blue-800 text-sm font-semibold mb-8">
               <Sparkles className="w-4 h-4 mr-2" />
               Transform Your Business Today
             </div>
             
-            <h1 className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight">
-              Craft Your
-              <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Digital Future
+            <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+              Craft Your Digital
+              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Future
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
               Comprehensive IT solutions designed for the modern digital landscape. 
               We transform businesses with innovative technology and strategic expertise.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-              <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-full px-10 py-4 text-lg font-semibold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300">
                 Explore Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-full px-10 py-4 text-lg font-semibold">
+              <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 rounded-full px-10 py-4 text-lg font-semibold">
                 Get Consultation
               </Button>
             </div>
             
-            {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
                 { number: '500+', label: 'Projects Delivered' },
@@ -153,8 +152,8 @@ const Services = () => {
                 { number: '24/7', label: 'Support Available' }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-black text-white mb-2">{stat.number}</div>
-                  <div className="text-blue-200 text-sm font-medium">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-black text-gray-900 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -163,16 +162,16 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 text-blue-800 text-sm font-semibold mb-6">
               <Code className="w-4 h-4 mr-2" />
               Our Core Services
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
               Solutions That Drive
-              <span className="block text-transparent bg-gradient-to-r from-primary to-brand-secondary bg-clip-text">
+              <span className="block text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
                 Real Results
               </span>
             </h2>
@@ -224,10 +223,10 @@ const Services = () => {
       </section>
 
       {/* Approaches Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-6">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-200 text-emerald-800 text-sm font-semibold mb-6">
               <Users className="w-4 h-4 mr-2" />
               Our Approach
             </div>
@@ -275,10 +274,10 @@ const Services = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold mb-6">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200 text-purple-800 text-sm font-semibold mb-6">
               <Database className="w-4 h-4 mr-2" />
               Pricing Plans
             </div>
@@ -345,28 +344,26 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-8">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">
             Ready to Transform
-            <span className="block text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text">
+            <span className="block text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
               Your Business?
             </span>
           </h2>
-          <p className="text-xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl mb-12 text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Let's discuss your project requirements and explore how our innovative solutions can accelerate your growth
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-full px-10 py-4 text-lg font-semibold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300">
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link to="/portfolio">
-              <Button variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-full px-10 py-4 text-lg font-semibold">
+              <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 rounded-full px-10 py-4 text-lg font-semibold">
                 View Our Work
               </Button>
             </Link>
