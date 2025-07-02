@@ -41,10 +41,11 @@ const Index = () => {
   ];
 
   const stats = [
-    { number: '500+', label: 'Projects Completed' },
-    { number: '200+', label: 'Happy Clients' },
-    { number: '10+', label: 'Years Experience' },
-    { number: '24/7', label: 'Support Available' }
+    { number: '500+', label: 'Projects' },
+    { number: '200+', label: 'Developers' },
+    { number: '18+', label: 'Industries' },
+    { number: '10', label: 'Years of experience' },
+    { number: '500+', label: 'Technologies' }
   ];
 
   const whyChooseUs = [
@@ -100,33 +101,42 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-20 pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-              Take Your Business to the
-              <span className="block text-primary">Next Level</span>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/lovable-uploads/9c1fd618-51dc-4d1e-8fbe-75359d93afab.png"
+            alt="Team working in modern office"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              Build Smarter.{' '}
+              <span className="text-primary">Evolve Faster</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              We empower businesses through innovative IT solutions and digital transformation services that drive growth, efficiency, and success.
+            <p className="text-lg md:text-xl text-gray-700 mb-12 leading-relaxed max-w-xl">
+              Whether you need traditional product development or AI-driven transformation, our 200+ developers deliver end-to-end engineering, cloud, and data expertise—backed by 500-plus launches across 18 industries.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-              <Button size="lg" className="bg-primary hover:bg-brand-secondary px-10 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                Get Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-2 border-gray-300 hover:border-primary px-10 py-6 text-lg rounded-full">
-                View Our Work
-              </Button>
-            </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-brand-secondary px-8 py-6 text-lg rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Talk to an expert
+            </Button>
+          </div>
+        </div>
+
+        {/* Stats Bar */}
+        <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                  <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
+                  <div className="text-gray-600 text-sm md:text-base font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
